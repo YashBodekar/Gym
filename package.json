@@ -1,23 +1,19 @@
 {
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "dependencies": {
     "axios": "^1.7.2",
-    "concurrently": "^8.2.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "mongoose": "^8.4.4"
-  },
-  "name": "gym-app",
-  "version": "1.0.0",
-  "description": "Welcome to the Gym Management System project, built using the MERN stack (MongoDB, Express.js, React.js, Node.js). This application helps manage gym members, classes, and schedules efficiently.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^3.1.4"
+    "framer-motion": "^11.2.12",
+    "styled-components": "^6.1.11"
   }
 }

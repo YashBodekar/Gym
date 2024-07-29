@@ -10,16 +10,18 @@ const getExercises = async (req, res) => {
 };
 
 const createExercise = async (req, res) => {
-  const { name, duration, date } = req.body;
+  const { username, description, duration, date } = req.body;
 
   const newExercise = new Exercise({
-    name,
+    username,
+    description,
     duration,
     date
   });
 
   try {
     const savedExercise = await newExercise.save();
+    console.log('Exercise saved');
     res.status(201).json(savedExercise);
   } catch (err) {
     res.status(400).json({ message: err.message });

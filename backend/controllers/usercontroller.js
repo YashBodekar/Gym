@@ -9,11 +9,26 @@ const getUsers = async (req, res) => {
   }
 };
 
+const getUserById = async (req, res) => {
+  try {
+      console.log('Id: <',req.params.id);
+      const user = await User.findById(req.params.id);
+      console.log('User',user);
+      if (!user) {
+          return res.status(404).json({ message: 'User not found' });
+      }
+      res.json(user);
+  } catch (error) {
+      res.status(500).json({ message: error.message });
+  }
+};
+
 const createUser = async (req, res) => {
-  const { username, password } = req.body;
+  const { username, email, password } = req.body;
 
   const newUser = new User({
     username,
+    email,
     password
   });
 
@@ -25,4 +40,4 @@ const createUser = async (req, res) => {
   }
 };
 
-module.exports = { getUsers, createUser };
+module.exports = { getUsers, createUser, getUserById };

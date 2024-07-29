@@ -1,8 +1,8 @@
 const express = require('express');
-const { getExercises, createExercise } = require('././controllers/exerciseController');
 const router = express.Router();
+const { getExercises, addExercise } = require('../controllers/exercisecontroller');
 
-router.get('/', getExercises);
-router.post('/', createExercise);
+router.get('/', getExercises); // Assuming you have a getExercises function
+router.post('/', addExercise); // Ensure addExercise function is defined
 
 module.exports = router;
